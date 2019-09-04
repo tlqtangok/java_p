@@ -6,13 +6,42 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-public class c_0 {
+public class c_0 extends Thread {
 
 	public int x; 
+	public Thread id_td; 
+	String id_td_name; 
 
-	public c_0(int x_)
+	public void run()
+	{
+		System.out.println("- in thread " + id_td_name + " ...");
+
+		fun_0(); 
+
+		try {
+			for (int i=0;i<4;i++)
+			{
+				System.out.println(id_td_name + " " + Integer.toString(i));
+				Thread.sleep(500); 
+			}	
+		} catch (Exception e){
+
+		}
+
+	}
+	public void start()
+	{
+		if (id_td == null) 
+		{
+			id_td = new Thread(this, id_td_name); 	
+			id_td.start(); 
+		}
+	}
+
+	public c_0(int x_, String id_td_name_)
 	{
 		x = x_;
+		id_td_name = id_td_name_; 
 	}
 
 	public static String run_cmd(String shellString) {  
@@ -71,8 +100,11 @@ public class c_0 {
 
 	public static void main(String [] args) {
 		//id_c_0.x = 99; 
-		c_0 id_c_0 = new c_0(888); 
-		id_c_0.fun_0(); 
+		c_0 id_c_0 = new c_0(888, "id_td_nm_0"); 
+		id_c_0.start(); 
+
+
+		//id_c_0.fun_0(); 
 
 		System.out.println("Hello World"); // 打印 Hello World
 	}

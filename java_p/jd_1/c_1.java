@@ -18,8 +18,14 @@ public class c_1 {
 
 	public static void main(String [] args) {
 		//id_c_0.x = 99; 
-		c_0 id_c_0 = new c_0(888); 
-		id_c_0.fun_0(); 
+		c_0 id_c_0 = new c_0(888,"id_td_nm_0"); 
+		c_0 id_c_1 = new c_0(999,"id_td_nm_1"); 
+
+		id_c_0.start(); 
+		id_c_1.start(); 
+
+
+		//id_c_0.fun_0(); 
 
 		System.out.println("Hello World"); // 打印 Hello World
 	}
