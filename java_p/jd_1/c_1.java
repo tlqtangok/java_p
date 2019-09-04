@@ -23,6 +23,13 @@ public class c_1 {
 
 		id_c_0.start(); 
 		id_c_1.start(); 
+		try {
+			id_c_0.join(); 
+			id_c_1.join(); 
+		} catch (InterruptedException e)
+		{
+			System.out.println(e.toString());
+		}
 
 
 		//id_c_0.fun_0(); 
