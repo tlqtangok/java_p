@@ -22,7 +22,7 @@ public class c_0 extends Thread {
 			for (int i=0;i<4;i++)
 			{
 				System.out.println(id_td_name + " " + Integer.toString(i));
-				Thread.sleep(500); 
+				Thread.sleep(100); 
 			}	
 		} catch (Exception e){
 
